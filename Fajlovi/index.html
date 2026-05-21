@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Naslovna</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav class="navbar" id="navbar">
+    <img src="../Images/ZvukNadeLogo.png" class="nav-logo">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-btn active">Glavna Stranica</a></li>
+      <li><a href="galerija.html" class="nav-btn">Galerija</a></li>
+      <li><a href="donacije.html" class="nav-btn">Donacije</a></li>
+
+    </ul>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Mobilni Meni -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-btn">Glavna Stranica</a>
+    <a href="galerija.html" class="nav-btn">Galerija</a>
+    <a href="donacije.html" class="nav-btn">Donacije</a>
+  </div>
+
+  <!-- Video -->
+  <section class="video-section">
+
+    <iframe
+      class="hero-video"
+      src="../Images/CharlityVideo.mp4"
+      id="heroVideo"
+      title="Hero video"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+
+  </section>
+
+  <!-- Glavni content -->
+  <main class="container">
+
+    <!-- O Sofiji -->
+    <section class="person-section reveal">
+      <div class="person-card">
+        <div class="person-image-wrapper">
+          <img src="../Images/Sofija2.jpg">
+        </div>
+        <div class="person-text">
+          <h2 class="section-title">Sofija Jovanović</h2>
+          <p class="person-desc">
+          Master pedagog koji u muzici pronalazi mir, spokoj i užitak.
+          Završila sam Filozofski fakultet u Beogradu i dve niže muzičke škole, za violinu i solo pevanje. Uz solo pevanje sam učila i klavir, a gitaru sam samostalno učila i učim i dalje…
+          <p class="person-desc secondary">
+            Sofija: "Oduvek sam znala da zelim nesto svoje, u šta cu uložiti puno energije, truda, rada i što će jednog dana možda perrasti u nešto veliko! Stalno sam maštala i verovala ali nisam znala šta je to "NEŠTO" što želim"
+        </div>
+      </div>
+    </section>
+
+    <!-- Paragrafcic -->
+    <section class="text-section reveal">
+      <div class="text-block">
+        <h3 class="sub-title">Zvuku Nade - oranizovanje humanitarnih svirki</h3>
+        <p>
+          Ideja se rodila u spontanom razgovoru izmedju Sofije i njenog brata: Pomoć deci koja su bolesna, a ujedno i mladim muzičarima koji žele da se probiju, a ne znaju kako i gde...
+        </p>
+        <p>
+          Sofija: "Nikolina je moja velika podrška, dugogodišnji prijatelj, a sada i saradnik u ovom poduhvatu. 🥰
+          Ukrštanje glasova nam je svakodnevica i radujemo se što ćemo imati priliku da sa vama podelimo našu ljubav prema muzici i međusobnu energiju…"
+        </p>
+      </div>
+    </section>
+
+    <!-- O Nikolini -->
+    <section class="person-section reveal">
+      <div class="person-card">
+        <div class="person-image-wrapper">
+          <img src="../Images/Sofija1.jpg">
+        </div>
+        <div class="person-text">
+          <h2 class="section-title">Milojević</h2>
+          <p class="person-desc">
+          Moj život je od najranijeg detinjstva neraskidivo povezan sa muzikom.
+Sa apsolutnim sluhom kao darom koji mi je otvorio vrata čistih tonova, svoj muzički put gradila sam kroz klavir, koji sam i završila. Za mene, klavirske dirke i pesma nisu samo umetnost, već prostor u kome ne postoje granice i gde se svetlost meri emocijama koje delimo. Danas, muzika je moj životni poziv, a svakim svojim izvođenjem želim da prenesem tu čistu, iskonsku magiju zvuka koja me pokreće od malih nogu.
+          <p class="person-desc secondary">
+            Nikolina: "Svet nikada nisam posmatrala očima, već sluhom i srcem – muzika je od samog početka bila moj prozor u svet, moj jezik i moj najprirodniji način izražavanja."
+            </p>
+      </div>
+    </section>
+    <!-- Dogadjaji -->
+    <section class="events-section reveal">
+      <h3 class="sub-title">Raspored Događaja</h3>
+
+      <div class="EventsScrollBox">
+
+        <!-- Dogadjaj -->
+        <div class="Event">
+          <div class="event-date-block">
+            <span class="event-date">28.5.</span>
+            <span class="event-time">20:00</span>
+          </div>
+          <div class="event-info-block">
+            <span class="event-location">Caffe restaurant X</span>
+            <a
+              href="https://maps.app.goo.gl/Nag8gqzKFEV3rEgX6"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="maps-btn">
+              📍 Otvori mapu
+            </a>
+          </div>
+        </div>
+
+       
+      </div><!-- /DogadjijiScrollBox -->
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <section class="Links">
+      <a target="_blank" href="https://www.instagram.com/zvuk.nade?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+      <a target="_blank" href="https://www.tiktok.com/@zvuk.nade?is_from_webapp=1&sender_device=pc">TikTok</a>
+    </section>  
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
