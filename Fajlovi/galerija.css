@@ -1,0 +1,388 @@
+/* =========================================
+   GALERIJA PAGE STYLES
+   ========================================= */
+
+/* Slider card overrides */
+.slider-card {
+  flex-direction: column !important;
+  gap: 0 !important;
+  padding: 36px 40px 40px !important;
+}
+
+/* Title + golden underline */
+.slider-header {
+  margin-bottom: 28px;
+}
+
+.slider-title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--white);
+  display: inline-block;
+}
+
+.slider-title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--yellow);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+/* Slider body: main image left, thumbs right */
+.slider-body {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Main image wrapper */
+.slider-main {
+  position: relative;
+  flex: 1;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: var(--navy-light);
+  min-width: 0;
+}
+
+.slider-big-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-md);
+  transition: opacity 0.3s ease;
+  cursor: zoom-in;
+}
+
+.slider-big-img.fade {
+  opacity: 0;
+}
+
+/* Arrows */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(13,27,62,0.65);
+  border: 1.5px solid rgba(232,99,140,0.35);
+  color: var(--white);
+  font-size: 2rem;
+  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.slider-arrow:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-arrow.left  { left: 12px; }
+.slider-arrow.right { right: 12px; }
+
+/* Fullscreen button */
+.fullscreen-btn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 10;
+  background: rgba(13,27,62,0.65);
+  border: 1.5px solid rgba(232,99,140,0.35);
+  color: var(--white);
+  font-size: 1rem;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), border-color var(--transition);
+  backdrop-filter: blur(4px);
+}
+.fullscreen-btn:hover {
+  background: var(--pink);
+  border-color: var(--pink);
+}
+
+/* =========================================
+   FULLSCREEN LIGHTBOX
+   ========================================= */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 15, 35, 0.96);
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 92vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  animation: lbFadeIn 0.25s ease;
+}
+
+@keyframes lbFadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  background: rgba(232,99,140,0.2);
+  border: 1.5px solid var(--pink);
+  color: var(--white);
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+}
+.lightbox-close:hover {
+  background: var(--pink);
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(13,27,62,0.65);
+  border: 1.5px solid rgba(232,99,140,0.35);
+  color: var(--white);
+  font-size: 2.5rem;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition);
+  backdrop-filter: blur(4px);
+}
+.lightbox-arrow:hover  { background: var(--pink); border-color: var(--pink); }
+.lightbox-arrow.left   { left: 20px; }
+.lightbox-arrow.right  { right: 20px; }
+
+/* =========================================
+   THUMBNAILS — DESKTOP (column, right side)
+   ========================================= */
+.slider-thumbs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90px;
+  flex-shrink: 0;
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 2px;
+}
+
+.slider-thumbs::-webkit-scrollbar       { width: 4px; }
+.slider-thumbs::-webkit-scrollbar-track { background: transparent; }
+.slider-thumbs::-webkit-scrollbar-thumb { background: var(--pink); border-radius: 4px; }
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.55;
+  flex-shrink: 0;
+  transition: opacity var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.thumb:hover {
+  opacity: 0.85;
+  transform: scale(1.04);
+}
+
+.thumb.active {
+  border-color: var(--pink);
+  opacity: 1;
+  box-shadow: 0 4px 14px rgba(232,99,140,0.35);
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
+@media (max-width: 650px) {
+  .slider-card {
+    padding: 24px 16px 28px !important;
+  }
+
+  .slider-body {
+    flex-direction: column;
+  }
+
+  .slider-main {
+    width: 100%;
+    aspect-ratio: 4/3;
+  }
+
+  /* Thumbnails: horizontal scrollable row */
+  .slider-thumbs {
+    flex-direction: row;
+    width: 100%;
+    max-height: none;
+    height: 68px;           /* fiksna visina da se ne razvlace */
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-right: 0;
+    padding-bottom: 0;
+  }
+
+  .thumb {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;        /* ne skuplja se */
+    aspect-ratio: 1/1;
+    flex-shrink: 0;
+  }
+
+  .slider-thumbs::-webkit-scrollbar        { height: 4px; }
+  .slider-thumbs::-webkit-scrollbar-track  { background: transparent; }
+  .slider-thumbs::-webkit-scrollbar-thumb  { background: var(--pink); border-radius: 4px; }
+
+  /* Lightbox strelice manje na mobilnom */
+  .lightbox-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.8rem;
+  }
+  .lightbox-arrow.left  { left: 8px; }
+  .lightbox-arrow.right { right: 8px; }
+}
+
+/* =========================================
+   MOBILE PLAYER CONTROLS
+   ========================================= */
+.slider-controls-mobile {
+  display: none;
+}
+
+@media (max-width: 650px) {
+  /* Sakri strelice sa slike na mobilnom */
+  .slider-main .slider-arrow,
+  .slider-main .fullscreen-btn {
+    display: none;
+  }
+
+  /* Slika manja */
+  .slider-main {
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-md);
+  }
+
+  /* Player dugmici ispod slike */
+  .slider-controls-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+  }
+
+  .ctrl-btn {
+    background: rgba(13,27,62,0.7);
+    border: 1.5px solid rgba(232,99,140,0.4);
+    color: var(--white);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  }
+
+  .ctrl-btn:hover,
+  .ctrl-btn:active {
+    background: var(--pink);
+    border-color: var(--pink);
+    transform: scale(1.1);
+  }
+
+  .ctrl-btn.fullscreen {
+    font-size: 1.1rem;
+    width: 42px;
+    height: 42px;
+    background: rgba(245,200,66,0.15);
+    border-color: rgba(245,200,66,0.4);
+  }
+
+  .ctrl-btn.fullscreen:hover {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--navy);
+  }
+}
+
+/* =========================================
+   FIX: Override style.css person-card na tablet/mobilnom
+   ========================================= */
+@media (max-width: 900px) {
+  .slider-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 28px 24px !important;
+  }
+
+  .slider-body {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .slider-main {
+    width: 100% !important;
+    aspect-ratio: 16/10;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-card {
+    padding: 20px 14px !important;
+  }
+
+  .slider-main {
+    aspect-ratio: 4/3;
+  }
+}
