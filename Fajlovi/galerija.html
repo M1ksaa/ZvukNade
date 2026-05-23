@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Zvuk Nade - Galerija</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="galerija.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 </head>
 <body>
@@ -31,7 +32,6 @@
 
   <!-- Video -->
   <section class="video-section">
-
     <iframe
       class="hero-video"
       src="../Images/CharlityVideo.mp4"
@@ -41,37 +41,111 @@
       allow="autoplay; encrypted-media"
       allowfullscreen>
     </iframe>
-
   </section>
 
   <!-- Glavni content -->
   <main class="container">
 
-    <!-- Paragrafcic -->
-    <section class="text-section reveal">
+      <section class="text-section reveal">
       <div class="text-block">
-        <h3 class="sub-title">Obaveštenje!</h3>
-        <p>
-          Trenutno nemamo slike sa humanitarnih svirki, navratite malo kasnije ❤️! <br>
-        </p>
-          <ul class="nav-links">
-            <li><a href="index.html" class="nav-btn">--> Vratite se na glavnu stranicu <---</a></li>
-          </ul>
+        <h3 class="sub-title">Slike sa humanitarnih svirki 💝</h3>
       </div>
     </section>
 
+    <!-- ===== SVIRKA 1 ===== -->
+    <section class="person-section reveal">
+      <div class="person-card slider-card">
 
+        <div class="slider-header">
+          <h3 class="slider-title">Svirka 1</h3>
+        </div>
+
+        <div class="slider-body">
+
+          <!-- Glavna slika + strelice (desktop) -->
+          <div class="slider-main">
+            <button class="slider-arrow left" onclick="changeSlide('svirka1', -1)">&#8249;</button>
+            <img src="../Images/Sofija1.jpg" class="slider-big-img" id="svirka1-main"
+                 onclick="openLightbox('svirka1')" alt="Svirka 1"/>
+            <button class="slider-arrow right" onclick="changeSlide('svirka1', 1)">&#8250;</button>
+            <button class="fullscreen-btn" onclick="openLightbox('svirka1')" title="Fullscreen">⛶</button>
+          </div>
+
+          <!-- Player kontrole — samo mobilni -->
+          <div class="slider-controls-mobile">
+            <button class="ctrl-btn" onclick="changeSlide('svirka1', -1)">&#8249;</button>
+            <button class="ctrl-btn fullscreen" onclick="openLightbox('svirka1')">⛶</button>
+            <button class="ctrl-btn" onclick="changeSlide('svirka1', 1)">&#8250;</button>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="slider-thumbs" id="svirka1-thumbs">
+            <img src="../Images/Sofija1.jpg" class="thumb active" onclick="setSlide('svirka1', 0)"  alt="0"/>
+            <img src="../Images/Sofija2.jpg" class="thumb"        onclick="setSlide('svirka1', 1)"  alt="1"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 2)"  alt="2"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 3)"  alt="3"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 4)"  alt="4"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 5)"  alt="5"/>
+            <img src="../Images/Sofija2.jpg" class="thumb"        onclick="setSlide('svirka1', 6)"  alt="6"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 7)"  alt="7"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 8)"  alt="8"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 9)"  alt="9"/>
+            <img src="../Images/Sofija1.jpg" class="thumb"        onclick="setSlide('svirka1', 10)" alt="10"/>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== DODAJ NOVU SVIRKU =====
+    Kopiraj ovaj blok i promeni svirka1 -> svirka2 svuda:
+
+    <section class="person-section reveal">
+      <div class="person-card slider-card">
+        <div class="slider-header">
+          <h3 class="slider-title">Svirka 2</h3>
+        </div>
+        <div class="slider-body">
+          <div class="slider-main">
+            <button class="slider-arrow left" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <img src="../Images/PrvaSlika.jpg" class="slider-big-img" id="svirka2-main"
+                 onclick="openLightbox('svirka2')" alt="Svirka 2"/>
+            <button class="slider-arrow right" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+            <button class="fullscreen-btn" onclick="openLightbox('svirka2')" title="Fullscreen">⛶</button>
+          </div>
+          <div class="slider-controls-mobile">
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <button class="ctrl-btn fullscreen" onclick="openLightbox('svirka2')">⛶</button>
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+          </div>
+          <div class="slider-thumbs" id="svirka2-thumbs">
+            <img src="../Images/PrvaSlika.jpg"  class="thumb active" onclick="setSlide('svirka2', 0)" alt="0"/>
+            <img src="../Images/DrugaSlika.jpg" class="thumb"        onclick="setSlide('svirka2', 1)" alt="1"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    ===== -->
 
   </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-arrow left" onclick="lightboxChangeSlide(-1)">&#8249;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Fullscreen"/>
+    <button class="lightbox-arrow right" onclick="lightboxChangeSlide(1)">&#8250;</button>
+  </div>
 
   <!-- FOOTER -->
   <footer class="footer">
     <section class="Links">
       <a target="_blank" href="https://www.instagram.com/zvuk.nade?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
       <a target="_blank" href="https://www.tiktok.com/@zvuk.nade?is_from_webapp=1&sender_device=pc">TikTok</a>
-    </section>  
+    </section>
   </footer>
 
   <script src="script.js"></script>
+  <script src="galerija.js"></script>
 </body>
 </html>
