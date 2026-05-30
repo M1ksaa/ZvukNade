@@ -366,6 +366,25 @@ body {
   border-color: var(--pink);
 }
 
+.Eventpassed {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgb(3, 41, 61) 0%,  rgb(44, 6, 3) 100%);
+  border-radius: var(--radius-md);
+  padding: 20px 28px;
+  box-shadow: var(--shadow);
+  border: 1.5px solid rgba(232,99,140,0.18);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  cursor: default;
+}
+
+.Eventpassed:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(13,27,62,0.22);
+  border-color: var(--pink);
+}
+
 .event-date-block {
   display: flex;
   flex-direction: column;
@@ -380,6 +399,15 @@ body {
   color: var(--yellow);
   line-height: 1;
 }
+
+.event-date-done {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: rgb(248, 163, 163);
+  line-height: 1;
+}
+
 
 .event-time {
   font-size: 0.78rem;
@@ -496,3 +524,4 @@ body {
 {
   background-color: #1e5233;
 }
+
