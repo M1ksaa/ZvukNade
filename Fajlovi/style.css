@@ -139,12 +139,18 @@ body {
   margin-top: 68px;
   width: 100%;
   height: 480px;
-  background: var(--navy-mid);
+  background: linear-gradient(
+      #1F494A,
+      #02151B
+  );
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 5px solid var(--pink);
+  border-top: 5px solid var(--pink);
 }
+
 
 .video-overlay {
   position: absolute;
@@ -162,13 +168,11 @@ body {
 
 
 .hero-video {
-  background-color: #1e5233;
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border: none;
+  object-fit: contain; /* or cover */
 }
 
 .video-placeholder {
@@ -520,8 +524,5 @@ body {
   color: var(--yellow);
   padding: var(--radius-sm);
 }
-.video-section
-{
-  background-color: #1e5233;
-}
+
 
