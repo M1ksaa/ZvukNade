@@ -525,4 +525,11 @@ body {
   padding: var(--radius-sm);
 }
 
+.Notification{
+  text-align: center;
+  font-size: 20px;
+  color: var(--text-muted);
+}
+
+
 
