@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="sr">
 <head>
@@ -12,7 +11,7 @@
   <link rel="shortcut icon" href="../Images/LogoMini.png">
 </head>
 <body>
- 
+
   <!-- Nav -->
   <nav class="navbar" id="navbar">
     <a href="../index.html"><img src="../Images/ZvukNadeLogo.png" class="nav-logo"></a>
@@ -25,81 +24,117 @@
       <span></span><span></span><span></span>
     </div>
   </nav>
- 
+
   <!-- Mobilni Meni -->
   <div class="mobile-menu" id="mobileMenu">
     <a href="../index.html" class="nav-btn">Glavna Stranica</a>
     <a href="galerija.html" class="nav-btn">Galerija</a>
     <a href="donacije.html" class="nav-btn">Donacije</a>
   </div>
- 
+
   <!-- Video -->
-  <section class="video-section">
-    <iframe
-      class="hero-video"
-      src="../Images/CharlityVideo.mp4"
-      id="heroVideo"
-      title="Hero video"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
-  </section>
- 
+<section class="video-section">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline>
+    <source src="../Images/ZvukNadeVideo.mp4" type="video/mp4">
+  </video>
+</section>
+
   <!-- Glavni content -->
   <main class="container">
- 
-    <!-- Obaveštenje -->
-    <section class="text-section reveal">
+
+      <section class="text-section reveal">
       <div class="text-block">
-        <h3 class="sub-title">Obaveštenje!</h3>
-        <p>
-          Trenutno nemamo slike sa humanitarnih svirki, navratite malo kasnije ❤️!
-        </p>
-        <a href="../index.html" class="nav-btn" style="display:inline-block; margin-top:12px;">→ Vratite se na glavnu stranicu ←</a>
+        <h3 class="sub-title-galerija">Slike sa humanitarnih svirki 💝</h3>
       </div>
     </section>
- 
-    <!-- ===== SVIRKA 1 =====
-         Kada dobiješ slike, ukloni stil display:none sa ove sekcije
-         i zameni src u img tagovima sa pravim slikama -->
-    <section class="person-section reveal" id="svirka1-section">
+
+    <!-- ===== SVIRKA 1 ===== -->
+    <section class="person-section reveal">
       <div class="person-card slider-card">
- 
+
         <div class="slider-header">
-          <h3 class="slider-title">Svirka 1</h3>
+          <h3 class="slider-title">Prva Humanitarna svirka za Luku - Caffe Restaurant X </h3>
+          <br><br>
+          <a href="https://maps.app.goo.gl/Nag8gqzKFEV3rEgX6" target="_blank" rel="noopener noreferrer" class="maps-btn">📍 Otvori mapu</a> 
         </div>
- 
+
         <div class="slider-body">
- 
-          <!-- Glavna slika + strelice -->
+
+          <!-- Glavna slika + strelice (desktop) -->
           <div class="slider-main">
             <button class="slider-arrow left" onclick="changeSlide('svirka1', -1)">&#8249;</button>
-            <img src="../Images/Sofija1.jpg" class="slider-big-img" id="svirka1-main" src="" alt="Svirka 1">
+            <img src="../Images/PrvaSvirka/Slika1.jpg" class="slider-big-img" id="svirka1-main"
+                 onclick="openLightbox('svirka1')" alt="Svirka 1"/>
             <button class="slider-arrow right" onclick="changeSlide('svirka1', 1)">&#8250;</button>
+            <button class="fullscreen-btn" onclick="openLightbox('svirka1')" title="Fullscreen">⛶</button>
           </div>
- 
+
+          <!-- Player kontrole — samo mobilni -->
+          <div class="slider-controls-mobile">
+            <button class="ctrl-btn" onclick="changeSlide('svirka1', -1)">&#8249;</button>
+            <button class="ctrl-btn fullscreen" onclick="openLightbox('svirka1')">⛶</button>
+            <button class="ctrl-btn" onclick="changeSlide('svirka1', 1)">&#8250;</button>
+          </div>
+
           <!-- Thumbnails -->
           <div class="slider-thumbs" id="svirka1-thumbs">
-            <img src="../Images/Sofija1.jpg" class="thumb active" onclick="setSlide('svirka1', 0)" alt="0"/>
-            <img src="../Images/Sofija2.jpg" class="thumb"        onclick="setSlide('svirka1', 1)" alt="1"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 2)" alt="2"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 3)" alt="3"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 4)" alt="4"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 5)" alt="5"/>
-            <img src="../Images/Sofija2.jpg" class="thumb"        onclick="setSlide('svirka1', 6)" alt="6"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 7)" alt="7"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 8)" alt="8"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 9)" alt="9"/>
-            <img src="../Images/Sofija1.jpg" class="thumb" onclick="setSlide('svirka1', 10)" alt="10"/>                          
+            <img src="../Images/PrvaSvirka/Slika1.jpg" class="thumb active" onclick="setSlide('svirka1', 0)"  alt="0"/>
+            <img src="../Images/PrvaSvirka/Slika2.jpg" class="thumb"        onclick="setSlide('svirka1', 1)"  alt="1"/>
+            <img src="../Images/PrvaSvirka/Slika3.jpg" class="thumb"        onclick="setSlide('svirka1', 2)"  alt="2"/>
+            <img src="../Images/PrvaSvirka/Slika4.jpg" class="thumb"        onclick="setSlide('svirka1', 3)"  alt="3"/>
+            <img src="../Images/PrvaSvirka/Slika5.jpg" class="thumb"        onclick="setSlide('svirka1', 4)"  alt="4"/>
+            <img src="../Images/PrvaSvirka/Slika6.jpg" class="thumb"        onclick="setSlide('svirka1', 5)"  alt="5"/>
           </div>
- 
+
         </div>
       </div>
     </section>
- 
+
+    <!-- ===== DODAJ NOVU SVIRKU =====
+    Kopiraj ovaj blok i promeni svirka1 -> svirka2 svuda:
+
+    <section class="person-section reveal">
+      <div class="person-card slider-card">
+        <div class="slider-header">
+          <h3 class="slider-title">Svirka 2</h3>
+        </div>
+        <div class="slider-body">
+          <div class="slider-main">
+            <button class="slider-arrow left" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <img src="../Images/PrvaSlika.jpg" class="slider-big-img" id="svirka2-main"
+                 onclick="openLightbox('svirka2')" alt="Svirka 2"/>
+            <button class="slider-arrow right" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+            <button class="fullscreen-btn" onclick="openLightbox('svirka2')" title="Fullscreen">⛶</button>
+          </div>
+          <div class="slider-controls-mobile">
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <button class="ctrl-btn fullscreen" onclick="openLightbox('svirka2')">⛶</button>
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+          </div>
+          <div class="slider-thumbs" id="svirka2-thumbs">
+            <img src="../Images/PrvaSlika.jpg"  class="thumb active" onclick="setSlide('svirka2', 0)" alt="0"/>
+            <img src="../Images/DrugaSlika.jpg" class="thumb"        onclick="setSlide('svirka2', 1)" alt="1"/>
+          </div>
+        </div>
+      </div>
+    </section>
+    ===== -->
+
   </main>
- 
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-arrow left" onclick="lightboxChangeSlide(-1)">&#8249;</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="Fullscreen"/>
+    <button class="lightbox-arrow right" onclick="lightboxChangeSlide(1)">&#8250;</button>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
     <section class="Links">
@@ -111,7 +146,7 @@
       </div>
     </section>  
   </footer>
- 
+
   <script src="script.js"></script>
   <script src="galerija.js"></script>
 </body>
