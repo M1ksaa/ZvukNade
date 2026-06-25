@@ -649,3 +649,10 @@ body {
     width: 300px;
   }
 }
+
+.credits{
+  display: flex;
+  flex-direction: column;
+  font-size: 10px;
+  color: var(--yellow);
+}
