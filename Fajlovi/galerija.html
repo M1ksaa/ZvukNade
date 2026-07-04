@@ -52,7 +52,48 @@
         <h3 class="sub-title-galerija">Slike sa humanitarnih svirki 💝</h3>
       </div>
     </section>
+    
+    <!-- ===== SVIRKA 2 ===== -->
+    <section class="person-section reveal">
+      <div class="person-card slider-card">
 
+        <div class="slider-header">
+          <h3 class="slider-title">Druga Humanitarna svirka za Danicu - Block Bar </h3>
+          <br><br>
+          <a href="https://maps.app.goo.gl/tw9STJZvSmgEufBm8" target="_blank" rel="noopener noreferrer" class="maps-btn">📍 Otvori mapu</a> 
+        </div>
+
+        <div class="slider-body">
+
+          <!-- Glavna slika + strelice (desktop) -->
+          <div class="slider-main">
+            <button class="slider-arrow left" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <img src="../Images/DrugaSvirka/Slika1.jpeg" class="slider-big-img" id="svirka2-main"
+                 onclick="openLightbox('svirka2')" alt="Svirka 2"/>
+            <button class="slider-arrow right" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+            <button class="fullscreen-btn" onclick="openLightbox('svirka2')" title="Fullscreen">⛶</button>
+          </div>
+
+          <!-- Player kontrole — samo mobilni -->
+          <div class="slider-controls-mobile">
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', -1)">&#8249;</button>
+            <button class="ctrl-btn fullscreen" onclick="openLightbox('svirka2')">⛶</button>
+            <button class="ctrl-btn" onclick="changeSlide('svirka2', 1)">&#8250;</button>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="slider-thumbs" id="svirka2-thumbs">
+            <img src="../Images/DrugaSvirka/Slika1.jpeg" class="thumb active" onclick="setSlide('svirka2', 0)"  alt="0"/>
+            <img src="../Images/DrugaSvirka/Slika2.jpeg" class="thumb"        onclick="setSlide('svirka2', 1)"  alt="1"/>
+            <img src="../Images/DrugaSvirka/Slika3.jpeg" class="thumb"        onclick="setSlide('svirka2', 2)"  alt="2"/>
+            <img src="../Images/DrugaSvirka/Slika4.jpeg" class="thumb"        onclick="setSlide('svirka2', 3)"  alt="3"/>
+            <img src="../Images/DrugaSvirka/Slika5.jpeg" class="thumb"        onclick="setSlide('svirka2', 4)"  alt="4"/>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
     <!-- ===== SVIRKA 1 ===== -->
     <section class="person-section reveal">
       <div class="person-card slider-card">
